@@ -1,6 +1,6 @@
 ## Introduction
-This repository holds the train_test.txt data set, associated code book, 
-and R-script used for generating it.
+This repository holds the train_test.txt data set, the associated code book code_book.txt, 
+and R-script run_analysis.R used for generating it.
 
 ## The Data
 The raw data set operated upon is from the "Getting and Cleaning Data" 
