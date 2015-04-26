@@ -1,24 +1,34 @@
-# run_analysis
-# Merges the training and the test sets to create one data set. Extracts only
-# the measurements on the mean and standard deviation for each measurement. Uses
-# descriptive activity names to name the activities in the data set 
-# Appropriately labels the data set with descriptive variable names. From the
-# data set in step 4, creates a second, independent tidy data set with the
-# average of each variable for each activity and each subject
-
-# The raw data was downloaded (April 11 2015) from:
+# run_analysis script
 #
+# This script operates on data linked from the "Getting and Cleaning Data" 
+# Coursera class website. The data were collected by processing
+# measurements from the accelerometers on the Samsung Galaxy S smartphone for 30
+# subjects performing 6 activities. The data are presented in multiple ascii
+# files for "train" and "test" subjects.
+#
+# This script merges the "train" set and the "test" set for a selection of 40 
+# variables representing the time-domain data associated with mean and standard 
+# deviation. Furthermore the extracted data is averaged by subject and activity,
+# leading to a final data set of 30*6=180 observations and 40 measurements. The 
+# data set also includes information about the subject, the activity, and 
+# whether it came from the train or the test set in the raw data. Naming
+# conventions and data details are given in the code book.
+#
+# The final data set is saved to file "train_test.txt".
+# The column separtor is a space, and the first line has column headers.
+# 
+# The raw data was downloaded (April 11 2015) from:
 # https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 # 
 # The data is unzipped into folder "UCI HAR Dataset". This script (run_analysis.R)
-# is to be invoked in parent folder of "UCI HAR Dataset"
+# is to be invoked from folder containing "UCI HAR Dataset"
 # 
 # ------------------------------
 # DEFINE PATH TO RAW DATA FOLDER
 # ------------------------------
 # The variable topdir is the relative path from working directory (where script
 # resides) to the top level folder containing the data files after unzipping.
-# Details are given in README.txt file provided in the zipped data.
+# Details are given in README.txt file provided with the data download.
 # The following definition assumes that run_analysis.R is in the same folder
 # as "UCI HAR Dataset"
 topdir <- 'UCI HAR Dataset'
@@ -46,8 +56,8 @@ fnames <- gsub( '\\-', '.', sub( '\\(\\)', '', features$V2))
 
 # Search for pattern ".mean." or pattern ".std." in features with prefix t.
 # Return the row indices in variable ind_tms
-ind_tms <- grep( '(t.*\\.mean\\.)|(t.*\\.std\\.)', fnames, value=FALSE)
-
+#ind_tms <- grep( '(t.*\\.mean\\.)|(t.*\\.std\\.)', fnames, value=FALSE)
+ind_tms <- grep( '(t.*\\.mean)|(t.*\\.std)', fnames, value=FALSE)
 # --------------------
 # LOAD THE ACTIVITIES
 # --------------------
