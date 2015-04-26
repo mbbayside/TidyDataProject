@@ -1,0 +1,130 @@
+
+Data Format
+===========
+The train_test.txt file is an ascii file with one header line and 180 observation rows. There are 43 columns as described below.
+
+
+Data Source (Reference 1)
+===========
+Experiments were carried out with a group of 30 volunteers performing six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) while wearing a smartphone (Samsung Galaxy S II) on the waist. Using the embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity were gathered at 50Hz.
+The obtained measurements were randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. This data  is presented in multiple ascii files for "train" and "test" subjects. The accelerometer and gyro data were filtered prior to being processed into 561 features. Each observation (561-feature vector) is associated with a subject and an activity.
+
+Processed Data train_test
+=========================
+The train_test.txt data set presented here re-assembles the test and train data sets for a selection of 40 features (described above). Furthermore the extracted data is averaged by subject and activity,leading to a final data set of 30*6=180 observations and 40 measurements. The data set also includes information about the subject, the activity, and 
+whether it came from the train or the test set in the raw data.
+
+
+Note
+====
+The units on the measurements are not available in the original data set, so they are not provided here. But features are normalized and bounded within [-1 1]\t- whatever that means (maybe that's how you get negative magnitudes)
+
+
+Data Descriptions
+=================
+
+Using the column header as variable name:
+
+ [1] 	"subject"
+	integer 1 to 30 representing the subject
+           
+ [2] 	"activity": one of the activities
+	LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS
+          
+ [3] 	"status" 
+	"test" or "train" depending on original data set   
+           
+ [4]	"tBodyAcc.mean.X" 
+	mean over subject/activity pair of mean body acceleration in X  
+   
+ [5]	"tBodyAcc.mean.Y"
+ 	mean over subject/activity pair of mean body acceleration in Y  
+     
+ [6]	"tBodyAcc.mean.Z"
+	mean over subject/activity pair of mean body acceleration in Z  
+ 
+ [7]	"tBodyAcc.std.X" 
+	mean over subject/activity pair of standard deviation body acceleration in X  
+     
+ [8]	"tBodyAcc.std.Y"   
+	mean over subject/activity pair of standard deviation body acceleration in Y 
+    
+ [9]	"tBodyAcc.std.Z"   
+	mean over subject/activity pair of standard deviation body acceleration in Z  
+   
+[10]	"tGravityAcc.mean.X" 
+	mean over subject/activity pair of mean gravity acceleration in X  
+ 
+[11]	"tGravityAcc.mean.Y" 
+	mean over subject/activity pair of mean gravity acceleration in Y  
+
+[12]	"tGravityAcc.mean.Z"   
+	mean over subject/activity pair of mean gravity acceleration in Z
+
+[13]	"tGravityAcc.std.X" 
+	mean over subject/activity pair of standard deviation gravity acceleration in X 
+
+[14]	"tGravityAcc.std.Y" 
+	mean over subject/activity pair of standard deviation gravity acceleration in Y   
+
+[15]	"tGravityAcc.std.Z"
+	mean over subject/activity pair of standard deviation gravity acceleration in Z  
+
+[16]	"tBodyAccJerk.mean.X"  
+
+[17]	"tBodyAccJerk.mean.Y"  
+
+[18]	"tBodyAccJerk.mean.Z"  
+
+[19]	"tBodyAccJerk.std.X"   
+
+[20]	"tBodyAccJerk.std.Y"   
+
+[21]	"tBodyAccJerk.std.Z"  
+ 
+[22]	"tBodyGyro.mean.X"    
+ 
+[23]	"tBodyGyro.mean.Y"     
+
+[24]	"tBodyGyro.mean.Z"     
+
+[25]	"tBodyGyro.std.X"      
+
+[26]	"tBodyGyro.std.Y"      
+
+[27]	"tBodyGyro.std.Z"      
+
+[28]	"tBodyGyroJerk.mean.X" 
+
+[29]	"tBodyGyroJerk.mean.Y" 
+
+[30]	"tBodyGyroJerk.mean.Z" 
+
+[31]	"tBodyGyroJerk.std.X"  
+
+[32]	"tBodyGyroJerk.std.Y"  
+
+[33]	"tBodyGyroJerk.std.Z"  
+
+[34]	"tBodyAccMag.mean"     
+
+[35]	"tBodyAccMag.std"      
+
+[36]	"tGravityAccMag.mean"  
+
+[37]	"tGravityAccMag.std"   
+
+[38]	"tBodyAccJerkMag.mean" 
+
+[39]	"tBodyAccJerkMag.std"  
+
+[40]	"tBodyGyroMag.mean"    
+
+[41]	"tBodyGyroMag.std"     
+
+[42]	"tBodyGyroJerkMag.mean"
+
+[43]	"tBodyGyroJerkMag.std" 
+
+
+
